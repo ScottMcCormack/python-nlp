@@ -1,0 +1,4 @@
+jupyterlab==3.1.4
+nltk==3.6.2
+spacy==3.1.1
+wheel==0.37.0
