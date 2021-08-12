@@ -24,3 +24,6 @@ venv.bak/
 
 # IDE
 .vscode/
+
+# Outputs
+**/output/
