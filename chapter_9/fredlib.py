@@ -1,10 +1,10 @@
 import os
 import sys
 import rdflib
-from flufl.enum import Enum
+from enum import Enum
 from rdflib import plugin
 from rdflib.serializer import Serializer
-from rdflib.plugins.memory import IOMemory
+from rdflib.plugins.stores.memory import Memory
 
 __author__ = 'misael mongiovi'
 
@@ -550,7 +550,7 @@ def getFredGraph(sentence,filename):
     try:
         os.system(command_to_exec)
     except:
-        print "error os running curl FRED"
+        print("error os running curl FRED")
         sys.exit(1)
 
     return openFredGraph(filename)
@@ -572,135 +572,135 @@ if __name__ == "__main__":
         checkFredGraph(g)
 
     def checkFredGraph(g):
-        print "getNodes"
+        print("getNodes")
         for n in g.getNodes():
-            print n
+            print(n)
 
-        print "getClassNodes"
+        print("getClassNodes")
         for n in g.getClassNodes():
-            print n
+            print(n)
 
-        print "getInstanceNodes"
+        print("getInstanceNodes")
         for n in g.getInstanceNodes():
-            print n
+            print(n)
 
-        print "getEventNodes"
+        print("getEventNodes")
         for n in g.getEventNodes():
-            print n
+            print(n)
 
-        print "getSituationNodes"
+        print("getSituationNodes")
         for n in g.getSituationNodes():
-            print n
+            print(n)
 
-        print "getNamedEntityNodes"
+        print("getNamedEntityNodes")
         for n in g.getNamedEntityNodes():
-            print n
+            print(n)
 
-        print "getQualityNodes"
+        print("getQualityNodes")
         for n in g.getQualityNodes():
-            print n
+            print(n)
 
-        print "getInfoNodes"
+        print("getInfoNodes")
         ns = g.getInfoNodes()
         for n in ns:
-            print n, ns[n].Type, ns[n].FredType, ns[n].ResourceType
+            print(n, ns[n].Type, ns[n].FredType, ns[n].ResourceType)
 
-        print "getEdges"
+        print("getEdges")
         for (a,b,c) in g.getEdges():
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Role)"
+        print("getEdgeMotif(EdgeMotif.Role)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Role):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Identity)"
+        print("getEdgeMotif(EdgeMotif.Identity)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Identity):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Type)"
+        print("getEdgeMotif(EdgeMotif.Type)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Type):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.SubClass)"
+        print("getEdgeMotif(EdgeMotif.SubClass)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.SubClass):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Equivalence)"
+        print("getEdgeMotif(EdgeMotif.Equivalence)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Equivalence):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Modality)"
+        print("getEdgeMotif(EdgeMotif.Modality)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Modality):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Negation)"
+        print("getEdgeMotif(EdgeMotif.Negation)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Negation):
-            print a,b,c
+            print(a,b,c)
 
-        print "getEdgeMotif(EdgeMotif.Property)"
+        print("getEdgeMotif(EdgeMotif.Property)")
         for (a,b,c) in g.getEdgeMotif(EdgeMotif.Property):
-            print a,b,c
+            print(a,b,c)
 
-        print "getInfoEdges"
+        print("getInfoEdges")
         es = g.getInfoEdges()
         for e in es:
-            print e, es[e].Type
+            print(e, es[e].Type)
 
-        print "getPathMotif(PathMotif.Type)"
+        print("getPathMotif(PathMotif.Type)")
         for (a,b) in g.getPathMotif(PathMotif.Type):
-            print a,b
+            print(a,b)
 
-        print "getPathMotif(PathMotif.SubClass)"
+        print("getPathMotif(PathMotif.SubClass)")
         for (a,b) in g.getPathMotif(PathMotif.SubClass):
-            print a,b
+            print(a,b)
 
-        print "getClusterMotif(ClusterMotif.Identity)"
+        print("getClusterMotif(ClusterMotif.Identity)")
         for cluster in g.getClusterMotif(ClusterMotif.Identity):
-            print cluster
+            print(cluster)
 
-        print "getClusterMotif(ClusterMotif.Equivalence)"
+        print("getClusterMotif(ClusterMotif.Equivalence)")
         for cluster in g.getClusterMotif(ClusterMotif.Equivalence):
-            print cluster
+            print(cluster)
 
-        print "getClusterMotif(ClusterMotif.IdentityEquivalence)"
+        print("getClusterMotif(ClusterMotif.IdentityEquivalence)")
         for cluster in g.getClusterMotif(ClusterMotif.IdentityEquivalence):
-            print cluster
+            print(cluster)
 
-        print "g.getNaryMotif(NaryMotif.Event)"
+        print("g.getNaryMotif(NaryMotif.Event)")
         motif_occurrences = g.getNaryMotif(NaryMotif.Event)
         for event in motif_occurrences:
             roles = motif_occurrences[event]
-            print event,"{",
+            print(event,"{", end=' ')
             for r in roles:
-                print r,":",roles[r],";",
-            print "}"
+                print(r,":",roles[r],";", end=' ')
+            print("}")
 
-        print "g.getNaryMotif(NaryMotif.Situation)"
+        print("g.getNaryMotif(NaryMotif.Situation)")
         motif_occurrences = g.getNaryMotif(NaryMotif.Situation)
         for situation in motif_occurrences:
             roles = motif_occurrences[situation]
-            print event,"{",
+            print(event,"{", end=' ')
             for r in roles:
-                print r,":",roles[r],";",
-            print "}"
+                print(r,":",roles[r],";", end=' ')
+            print("}")
 
-        print "g.getNaryMotif(NaryMotif.OtherEvent)"
+        print("g.getNaryMotif(NaryMotif.OtherEvent)")
         motif_occurrences = g.getNaryMotif(NaryMotif.OtherEvent)
         for other_event in motif_occurrences:
             roles = motif_occurrences[other_event]
-            print event,"{",
+            print(event,"{", end=' ')
             for r in roles:
-                print r,":",roles[r],";",
-            print "}"
+                print(r,":",roles[r],";", end=' ')
+            print("}")
 
-        print "g.getNaryMotif(NaryMotif.Concept)"
+        print("g.getNaryMotif(NaryMotif.Concept)")
         motif_occurrences = g.getNaryMotif(NaryMotif.Concept)
         for concept in motif_occurrences:
             roles = motif_occurrences[concept]
-            print event,"{",
+            print(event,"{", end=' ')
             for r in roles:
-                print r,":",roles[r],";",
-            print "}"
+                print(r,":",roles[r],";", end=' ')
+            print("}")
 
     g = checkFredSentence('The radio said that Pippo went to France','pippo.rdf')
 
