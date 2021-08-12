@@ -25,5 +25,8 @@ venv.bak/
 # IDE
 .vscode/
 
-# Outputs
+# Output directories
 **/output/
+
+# Data directories
+data/
