@@ -5,3 +5,4 @@ python-Levenshtein==0.12.2  # required for gensim
 scikit-learn==0.24.2
 spacy==3.1.1
 wheel==0.37.0
+vaderSentiment=3.3.2
