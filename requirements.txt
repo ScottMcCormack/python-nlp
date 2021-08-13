@@ -1,0 +1,13 @@
+jupyterlab==3.1.4
+gensim==4.0.1
+matplotlib==3.4.2
+nltk==3.6.2
+pyLDAvis==3.3.1
+pyspotlight==0.7.2
+python-Levenshtein==0.12.2  # required for gensim
+rdflib==6.0.0
+scikit-learn==0.24.2
+spacy==3.1.1
+textblob==0.15.3
+vaderSentiment=3.3.2
+wheel==0.37.0
