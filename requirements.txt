@@ -9,5 +9,5 @@ rdflib==6.0.0
 scikit-learn==0.24.2
 spacy==3.1.1
 textblob==0.15.3
-vaderSentiment=3.3.2
+vaderSentiment==3.3.2
 wheel==0.37.0
