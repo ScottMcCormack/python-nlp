@@ -1,7 +1,7 @@
 jupyterlab==3.6.7
 gensim==4.0.1
 matplotlib==3.4.2
-nltk==3.6.6
+nltk==3.8.1
 pyLDAvis==3.3.1
 pyspotlight==0.7.2
 python-Levenshtein==0.12.2  # required for gensim
