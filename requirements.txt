@@ -1,4 +1,4 @@
-jupyterlab==3.6.7
+jupyterlab==3.6.8
 gensim==4.0.1
 matplotlib==3.4.2
 nltk==3.9
