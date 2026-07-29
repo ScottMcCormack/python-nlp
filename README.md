@@ -2,7 +2,7 @@
 Jupyter notebooks from following the Tutorials from "[Natural Language Text Processing with Python][book]" by Jonathan Mugan
 
 The following libraries are used:
-* `nltk` (v3.6.2): https://www.nltk.org/
+* `nltk` (v3.10.0): https://www.nltk.org/
 * `spaCy` (v3.1.1): https://spacy.io/usage
 * `gensim` (v4.0.1) : https://radimrehurek.com/gensim/
 * `pyLDAvis` (v3.3.1): https://pyldavis.readthedocs.io/en/latest/index.html
